@@ -61,44 +61,31 @@ python train_ssvbt.py --noisetype gauss25 --data_dir ./data/train/Imagenet_val -
     ```shell
     python test_ssvbt.py --checkpoint ./pretrained_models/Field.pth --test_dirs ./dataset/FieldData --subfold Confocal_FISH --save_test_path ./test --log_name Confocal_FISH_b2u_unet_FIELD_112rf20 --beta 20.0
     ```
-### Network architecture
+### Self-Supervised Visible Blind Trace Framework
 ![RUNOOB 图标](./networkandresult/1.png)
 
 ### Test Results
-#### 1. ADNet for BSD68
+#### 1. SS-VBT for SEG_C3 and BP2007
 ![RUNOOB 图标](./networkandresult/2BSD.png)
 
-#### 2. ADNet for Set12
-![RUNOOB 图标](./networkandresult/3Set12.png)
+#### 2. Influences of Masking Strategies
+![RUNOOB 图标](./networkandresult/12.png)
 
-#### 3. ADNet for CBSD68, Kodak24 and McMaster
-![RUNOOB 图标](./networkandresult/4color.png)
+#### 3. Influences of Masking Strategies
+![RUNOOB 图标](./networkandresult/12.png)
 
-#### 4. ADNet for CBSD68, Kodak24 and McMaster
-![RUNOOB 图标](./networkandresult/5realnoisy.png)
+#### 4. Influences of Masking Strategies
+![RUNOOB 图标](./networkandresult/12.png)
 
-#### 5. Running time of ADNet for a noisy image of different sizes.
-![RUNOOB 图标](./networkandresult/6ruungtime.png)
-
-#### 6. Complexity of ADNet
-![RUNOOB 图标](./networkandresult/7complexity.png)
-
-#### 7. 9 real noisy images
-![RUNOOB 图标](./networkandresult/8realnoisy.png)
-
-#### 8. 9 thermodynamic images from the proposed A
-![RUNOOB 图标](./networkandresult/9ab.png)
-
-#### 9. Visual results of BSD68
+#### 5. Visual results of SEG_C3
 ![RUNOOB 图标](./networkandresult/9gray.png)
 
-#### 10. Visual results of Set12
+#### 6. Visual results of BP2007
 ![RUNOOB 图标](./networkandresult/10gray.png)
 
-#### 11. Visual results of Kodak24
+#### 7. Visual results of Mobil Viking Graben Line 12
 ![RUNOOB 图标](./networkandresult/11.png)
 
-#### 12. Visual results of McMaster 
-![RUNOOB 图标](./networkandresult/12.png)
+
 
  
