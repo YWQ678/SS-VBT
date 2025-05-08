@@ -54,19 +54,6 @@ python train_ssvbt.py --noisetype gauss25 --data_dir ./data/train/Imagenet_val -
     python test_ssvbt.py --noisetype gauss50 --checkpoint ./pretrained_models/g50.pth --test_dirs ./data/validation --save_test_path ./test --log_name b2u_unet_g50_112rf20 --beta 19.7
     ```
 
-
-* Test on **SIDD Validation** in raw-RGB space
-
-```shell
-python test_sidd_b2u.py --checkpoint ./pretrained_models/rawRGB_112rf20_beta19.4.pth --test_dirs ./data/validation --save_test_path ./test --log_name validation_b2u_unet_raw_112rf20 --beta 19.4
-```
-
-* Test on **SIDD Benchmark** in raw-RGB space
-
-```shell
-python benchmark_sidd_b2u.py --checkpoint ./pretrained_models/rawRGB_112rf20_beta19.4.pth --test_dirs ./data/validation --save_test_path ./test --log_name benchmark_b2u_unet_raw_112rf20 --beta 19.4
-```
-
 * Test on **Mobil Viking Graben Line 12 dataset**
 
   *  For Confocal_FISH
