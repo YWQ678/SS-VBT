@@ -62,29 +62,28 @@ python train_ssvbt.py --noisetype gauss25 --data_dir ./data/train/Imagenet_val -
     python test_ssvbt.py --checkpoint ./pretrained_models/Field.pth --test_dirs ./dataset/FieldData --subfold Confocal_FISH --save_test_path ./test --log_name Confocal_FISH_b2u_unet_FIELD_112rf20 --beta 20.0
     ```
 ### Self-Supervised Visible Blind Trace Framework
-![RUNOOB 图标](./networkandresult/1.png)
+![net](./results/net.png)
 
 ### Test Results
 #### 1. SS-VBT for SEG_C3 and BP2007
-![RUNOOB 图标](./networkandresult/2BSD.png)
+![1](./results/1.png)
 
 #### 2. Influences of Masking Strategies
-![RUNOOB 图标](./networkandresult/12.png)
+![2](./results/2.png)
 
 #### 3. Influences of Masking Strategies
-![RUNOOB 图标](./networkandresult/12.png)
+![3](./results/3.png)
 
 #### 4. Influences of Masking Strategies
-![RUNOOB 图标](./networkandresult/12.png)
-
+![4](./results/4.png)
 #### 5. Visual results of SEG_C3
-![RUNOOB 图标](./networkandresult/9gray.png)
+![5](./results/5.png)
 
 #### 6. Visual results of BP2007
-![RUNOOB 图标](./networkandresult/10gray.png)
+![6](./results/6.png)
 
 #### 7. Visual results of Mobil Viking Graben Line 12
-![RUNOOB 图标](./networkandresult/11.png)
+![7](./results/7.png)
 
 
 
