@@ -62,20 +62,20 @@ python train_ssvbt.py --noisetype gauss25 --data_dir ./data/train/Imagenet_val -
     python test_ssvbt.py --checkpoint ./pretrained_models/Field.pth --test_dirs ./dataset/FieldData --subfold Confocal_FISH --save_test_path ./test --log_name Confocal_FISH_b2u_unet_FIELD_112rf20 --beta 20.0
     ```
 ### Self-Supervised Visible Blind Trace Framework
-![net](./results/net.png)
+![net](./results/net.jpg)
 
 ### Test Results
 #### 1. SS-VBT for SEG_C3 and BP2007
-![1](./results/1.png)
+![1](./results/1.jpg)
 
 #### 2. Influences of Masking Strategies
-![2](./results/2.png)
+![2](./results/2.jpg)
 
 #### 3. Influences of Masking Strategies
-![3](./results/3.png)
+![3](./results/3.jpg)
 
 #### 4. Influences of Masking Strategies
-![4](./results/4.png)
+![4](./results/4.jpg)
 #### 5. Visual results of SEG_C3
 ![5](./results/5.png)
 
