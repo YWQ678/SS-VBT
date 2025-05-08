@@ -18,7 +18,7 @@ from torchvision import transforms
 from torch.utils.data import DataLoader
 from torch.utils.data import Dataset
 
-from arch_unet import UNet
+from unet import UNet
 import utils as util
 from collections import OrderedDict
 
