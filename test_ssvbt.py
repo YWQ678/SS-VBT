@@ -23,7 +23,7 @@ import utils as util
 from collections import OrderedDict
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--noisetype", type=str, default="gauss25", choices=['gauss25', 'gauss5_50', 'poisson30', 'poisson5_50'])
+parser.add_argument("--noisetype", type=str, default="gauss25", choices=['gauss15', 'gauss25', 'gauss50'])
 parser.add_argument('--checkpoint', type=str, default='./*.pth')
 parser.add_argument('--test_dirs', type=str, default='./data/validation')
 parser.add_argument('--save_test_path', type=str, default='./test')
@@ -155,13 +155,6 @@ class AugmentNoise(object):
             std = np.random.uniform(low=min_std, high=max_std, size=(1, 1, 1))
             return np.array(x + np.random.normal(size=shape) * std,
                             dtype=np.float32)
-        elif self.style == "poisson_fix":
-            lam = self.params[0]
-            return np.array(np.random.poisson(lam * x) / lam, dtype=np.float32)
-        elif self.style == "poisson_range":
-            min_lam, max_lam = self.params
-            lam = np.random.uniform(low=min_lam, high=max_lam, size=(1, 1, 1))
-            return np.array(np.random.poisson(lam * x) / lam, dtype=np.float32)
 
 
 def space_to_depth(x, block_size):
