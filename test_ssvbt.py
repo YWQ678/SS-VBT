@@ -549,8 +549,8 @@ for valid_name, valid_images in valid_dict.items():
             avg_ssim_mid.append(ssim_mid)
 
             logger.info(
-                "{} - img:{}_{:03d} - PSNR_DN: {:.6f} dB; SSIM_DN: {:.6f}; PSNR_EXP: {:.6f} dB; SSIM_EXP: {:.6f}; PSNR_MID: {:.6f} dB; SSIM_MID: {:.6f}.".format(
-                valid_name, i, idx, psnr_dn, ssim_dn, psnr_exp, ssim_exp, psnr_mid, ssim_mid
+                "{} - data:{}_{:03d} -SNR_DN: {:.6f} dB; PSNR_DN: {:.6f} dB; SSIM_DN: {:.6f};SNR_EXP: {:.6f} dB; PSNR_EXP: {:.6f} dB; SSIM_EXP: {:.6f};SNR_MID: {:.6f} dB; PSNR_MID: {:.6f} dB; SSIM_MID: {:.6f}.".format(
+                valid_name, i, idx,snr_dn, psnr_dn, ssim_dn,snr_exp, psnr_exp, ssim_exp,snr_mid, psnr_mid, ssim_mid
                 )
             )
 
@@ -595,8 +595,8 @@ for valid_name, valid_images in valid_dict.items():
     avg_psnr_mid = np.mean(avg_psnr_mid)
     avg_ssim_mid = np.mean(avg_ssim_mid)
     
-    logger.info(
-        "----Average PSNR/SSIM results for {}----\n\tPSNR_DN: {:.6f} dB; SSIM_DN: {:.6f}\n----PSNR_EXP: {:.6f} dB; SSIM_EXP: {:.6f}\n----PSNR_MID: {:.6f} dB; SSIM_MID: {:.6f}".format(
-            valid_name, avg_psnr_dn, avg_ssim_dn, avg_psnr_exp, avg_ssim_exp, avg_psnr_mid, avg_ssim_mid
-        )
+     logger.info(
+                "{} - data:{}_{:03d} -SNR_DN: {:.6f} dB; PSNR_DN: {:.6f} dB; SSIM_DN: {:.6f};SNR_EXP: {:.6f} dB; PSNR_EXP: {:.6f} dB; SSIM_EXP: {:.6f};SNR_MID: {:.6f} dB; PSNR_MID: {:.6f} dB; SSIM_MID: {:.6f}.".format(
+                valid_name, i, idx,snr_dn, psnr_dn, ssim_dn,snr_exp, psnr_exp, ssim_exp,snr_mid, psnr_mid, ssim_mid
+                )
     )
