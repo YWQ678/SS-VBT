@@ -1,0 +1,5 @@
+torch==1.12.1
+numpy>=1.21.0
+matplotlib>=3.5.0
+tqdm>=4.64.0  # For training progress
+scipy>=1.7.0  # For seismic IO
