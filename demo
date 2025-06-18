@@ -1,0 +1,49 @@
+#!/usr/bin/env python3
+"""
+SS-VBT Denoising Demo
+Usage: python demo.py --input_data ./test_data/seismic.npy
+"""
+import argparse
+import numpy as np
+import matplotlib.pyplot as plt
+from ssvbt import SSVBT
+
+def load_data(path: str) -> np.ndarray:
+    """Load seismic data with validation"""
+    data = np.load(path)
+    assert data.ndim == 2, "Input must be 2D (H x W)"
+    return (data - data.mean()) / (data.std() + 1e-8)  # Normalize
+
+def plot_results(noisy: np.ndarray, denoised: np.ndarray):
+    """Generate comparison plot"""
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6))
+    ax1.imshow(noisy, cmap='seismic', aspect='auto')
+    ax1.set_title("Noisy Input")
+    ax2.imshow(denoised, cmap='seismic', aspect='auto')
+    ax2.set_title("SS-VBT Denoised")
+    plt.savefig('result.png')
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--input_data", type=str, required=True)
+    parser.add_argument("--model_path", type=str, default="pretrained/model.pth")
+    args = parser.parse_args()
+
+    # Load and prepare data
+    seismic = load_data(args.input_data)
+    input_tensor = torch.FloatTensor(seismic).unsqueeze(0).unsqueeze(0)
+
+    # Initialize model
+    model = SSVBT()
+    model.load_state_dict(torch.load(args.model_path))
+    model.eval()
+
+    # Process and save
+    with torch.no_grad():
+        denoised, _, _, _ = model(input_tensor)
+    
+    np.save("denoised_output.npy", denoised.squeeze().numpy())
+    plot_results(seismic, denoised.squeeze().numpy())
+
+if __name__ == "__main__":
+    main()
